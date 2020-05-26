@@ -11,7 +11,7 @@ using Wox.Infrastructure.Image;
 using Wox.Infrastructure.Logger;
 using Wox.Plugin;
 using Windows.UI.Xaml.Media;
-
+using Wox.Helper;
 
 namespace Wox.ViewModel
 {
@@ -129,7 +129,7 @@ namespace Wox.ViewModel
                     {
                         bool hideWindow = r.Action != null && r.Action(new ActionContext
                         {
-                            SpecialKeyState = GlobalHotkey.Instance.CheckModifiers()
+                            SpecialKeyState = KeyboardHelper.CheckModifiers()
                         });
 
                         if (hideWindow)

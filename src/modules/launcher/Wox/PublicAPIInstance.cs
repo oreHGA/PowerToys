@@ -28,7 +28,6 @@ namespace Wox
             _settingsVM = settingsVM;
             _mainVM = mainVM;
             _alphabet = alphabet;
-            GlobalHotkey.Instance.hookedKeyboardCallback += KListener_hookedKeyboardCallback;
             WebRequest.RegisterPrefix("data", new DataWebRequestFactory());
         }
 
@@ -124,7 +123,6 @@ namespace Wox
             return PluginManager.AllPlugins.ToList();
         }
 
-        public event WoxGlobalKeyboardEventHandler GlobalKeyboardEvent;
 
         [Obsolete("This will be removed in Wox 1.3")]
         public void PushResults(Query query, PluginMetadata plugin, List<Result> results)
@@ -145,14 +143,6 @@ namespace Wox
 
         #region Private Methods
 
-        private bool KListener_hookedKeyboardCallback(KeyEvent keyevent, int vkcode, SpecialKeyState state)
-        {
-            if (GlobalKeyboardEvent != null)
-            {
-                return GlobalKeyboardEvent((int)keyevent, vkcode, state);
-            }
-            return true;
-        }
         #endregion
     }
 }

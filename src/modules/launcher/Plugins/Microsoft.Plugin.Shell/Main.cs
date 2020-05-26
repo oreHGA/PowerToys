@@ -288,7 +288,6 @@ namespace Microsoft.Plugin.Shell
         public void Init(PluginInitContext context)
         {
             this._context = context;
-            context.API.GlobalKeyboardEvent += API_GlobalKeyboardEvent;
         }
 
         bool API_GlobalKeyboardEvent(int keyevent, int vkcode, SpecialKeyState state)

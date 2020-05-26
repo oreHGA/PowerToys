@@ -122,6 +122,7 @@
     <WriteLinesToFile File="Generated Files\AssemblyInfo.cpp" Lines="@(HeaderLines)" Overwrite="true" Encoding="Unicode" WriteOnlyWhenDifferent="true" />
   </Target>
   <ItemGroup>
+    <ClInclude Include="HotkeyManager.h" />
     <ClInclude Include="interop.h" />
     <ClInclude Include="KeyboardHook.h" />
     <ClInclude Include="pch.h" />
@@ -129,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Generated Files\AssemblyInfo.cpp" />
+    <ClCompile Include="HotkeyManager.cpp" />
     <ClCompile Include="interop.cpp" />
     <ClCompile Include="KeyboardHook.cpp" />
     <ClCompile Include="pch.cpp">
